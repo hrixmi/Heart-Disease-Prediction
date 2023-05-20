@@ -97,7 +97,22 @@ def main():
     
     fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl', ['Yes', 'No'])
     restecg = st.selectbox('Select Resting Electrocardiographic Results', ['Normal', 'Having ST-T wave abnormality', 'Showing probable or definite left ventricular hypertrophy'])
+    
+    
     thalach = st.text_input('Enter Maximum Heart Rate Achieved')
+    # Validate maximum heart rate achieved input
+    if thalach:
+        if not thalach.isdigit():
+            st.error('Maximum heart rate achieved must be a valid number.')
+        else:
+            thalach = int(thalach)
+            if thalach < 0 or thalach > 300:
+                st.error('Maximum heart rate achieved must be between 0 and 300.')
+    else:
+        st.error('Please enter a maximum heart rate achieved.')
+    
+    
+    
     exang = st.selectbox('Exercise Induced Angina', ['Yes', 'No'])
     oldpeak = st.text_input('Enter ST Depression')
     slope = st.selectbox('Select the slope of the peak exercise ST segment', ['Upsloping', 'Flat', 'Downsloping'])
