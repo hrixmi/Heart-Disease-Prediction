@@ -46,7 +46,23 @@ def main():
 
     
     #getting the input data from the user
-    age = st.text_input('Enter Age')
+    def validate_age(age):
+    try:
+        age = int(age)
+        if age < 1 or age > 150:
+            raise ValueError
+        return age
+    except ValueError:
+        st.error("Please enter a valid age between 1 and 150.")
+        return None
+
+# ...
+
+age = st.text_input('Enter Age')
+age = validate_age(age)
+
+# ...
+
     sex = st.selectbox('Select Sex', ['Male', 'Female'])
     cp = st.selectbox('Select Chest Pain Type', ['Typical angina', 'Atypical angina', 'Non-anginal pain', 'Asymptomatic'])
     trestbps = st.text_input('Enter Resting Blood Pressure')
