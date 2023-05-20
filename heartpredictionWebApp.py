@@ -47,11 +47,6 @@ def main():
     
     #getting the input data from the user
     age = st.text_input('Enter Age')
-    
-    age_hover_text = 'Please enter your age'
-    age_html = f'<span title="{age_hover_text}"><input type="text" placeholder="Enter Age" value="{age}" name="age" class="element-container"></span>'
-    st.markdown(age_html, unsafe_allow_html=True)
-
     # Validate age input
     if age:
         if not age.isdigit():
@@ -61,8 +56,6 @@ def main():
             if age < 18 or age > 100:
                 st.error('Age must be between 18 and 100.')
 
-
-# ...
 
     sex = st.selectbox('Select Sex', ['Male', 'Female'])
     cp = st.selectbox('Select Chest Pain Type', ['Typical angina', 'Atypical angina', 'Non-anginal pain', 'Asymptomatic'])
@@ -78,9 +71,7 @@ def main():
             if trestbps < 60 or trestbps > 300:
                 st.error('Resting blood pressure must be between 60 and 300 mmHg.')
     
-    
-    
-    
+     
     chol = st.text_input('Enter Cholesterol Level')
     # Validate cholesterol level input
     if chol:
@@ -91,10 +82,7 @@ def main():
             if chol < 50 or chol > 500:
                 st.error('Cholesterol level must be between 50 and 500.')
     
-    
-    
-    
-    
+  
     fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl', ['Yes', 'No'])
     restecg = st.selectbox('Select Resting Electrocardiographic Results', ['Normal', 'Having ST-T wave abnormality', 'Showing probable or definite left ventricular hypertrophy'])
     
@@ -109,12 +97,9 @@ def main():
             if thalach < 0 or thalach > 300:
                 st.error('Maximum heart rate achieved must be between 0 and 300.')
     
-    
-    
-    
+        
     exang = st.selectbox('Exercise Induced Angina', ['Yes', 'No'])
-    
-    
+     
     oldpeak = st.text_input('Enter ST Depression')
     # Validate ST depression input
     if oldpeak:
@@ -125,12 +110,10 @@ def main():
         except ValueError:
             st.error('ST Depression must be a valid number.')
     
-        
-        
-        
+    
     slope = st.selectbox('Select the slope of the peak exercise ST segment', ['Upsloping', 'Flat', 'Downsloping'])
     
-    
+   
     ca = st.text_input('Enter the number of major vessels colored by fluoroscopy')
     # Validate the number of major vessels input
     if ca:
@@ -140,12 +123,9 @@ def main():
             ca = int(ca)
             if ca < 0 or ca > 4:
                 st.error('Number of major vessels must be between 0 and 4.')
-    
-    
-    
+      
     thal = st.selectbox('Thalassemia', ['Normal', 'Fixed defect', 'Reversable defect'])
-  
-    
+
     # Preprocess the user input
     sex = 1 if sex == 'Male' else 0
     if cp == 'Typical Angina':
