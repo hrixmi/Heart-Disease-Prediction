@@ -116,7 +116,7 @@ def main():
        
         
     st.markdown('<hr>', unsafe_allow_html=True)
-    st.write('Version 1.2 | Last updated: March 2023 | Created by Group - 28 | Guided By - Dr. Tapan Chowdhury')
+    st.write('Version 1.3 | Last updated: May 2023 | Created by - Group 28')
     st.write('[View source code]()')
     
 if __name__ == '__main__':
