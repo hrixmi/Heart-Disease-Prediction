@@ -131,7 +131,21 @@ def main():
         
         
     slope = st.selectbox('Select the slope of the peak exercise ST segment', ['Upsloping', 'Flat', 'Downsloping'])
+    
+    
     ca = st.text_input('Enter the number of major vessels colored by fluoroscopy')
+    # Validate the number of major vessels input
+    if ca:
+        if not ca.isdigit():
+            st.error('Number of major vessels must be a valid integer.')
+        else:
+            ca = int(ca)
+            if ca < 0 or ca > 4:
+                st.error('Number of major vessels must be between 0 and 4.')
+    else:
+        st.error('Please enter the number of major vessels.')
+    
+    
     thal = st.selectbox('Thalassemia', ['Normal', 'Fixed defect', 'Reversable defect'])
   
     
