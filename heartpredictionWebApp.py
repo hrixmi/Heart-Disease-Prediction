@@ -74,7 +74,7 @@ def main():
             st.error('Resting blood pressure must be a valid number.')
         else:
             trestbps = int(trestbps)
-            if trestbps < 0 or trestbps > 300:
+            if trestbps < 60 or trestbps > 300:
                 st.error('Resting blood pressure must be between 0 and 300 mmHg.')
     else:
         st.error('Please enter a resting blood pressure.')
