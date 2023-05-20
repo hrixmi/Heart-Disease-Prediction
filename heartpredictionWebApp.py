@@ -48,10 +48,9 @@ def main():
     #getting the input data from the user
     age = st.text_input('Enter Age')
     
-    st.markdown(
-        f'<style>.css-1l02zno:hover {{ box-shadow: 0 0 0 2px rgba(38, 132, 255, 0.3); }}</style>',
-        unsafe_allow_html=True
-    )
+    age_hover_text = 'Please enter your age'
+    age_html = f'<span title="{age_hover_text}"><input type="text" placeholder="Enter Age" value="{age}" name="age" class="element-container"></span>'
+    st.markdown(age_html, unsafe_allow_html=True)
 
     # Validate age input
     if age:
