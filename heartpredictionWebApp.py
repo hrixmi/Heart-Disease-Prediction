@@ -67,7 +67,6 @@ def main():
     
     
     trestbps = st.text_input('Enter Resting Blood Pressure')
-
     # Validate resting blood pressure input
     if trestbps:
         if not trestbps.isdigit():
@@ -80,7 +79,22 @@ def main():
         st.error('Please enter a resting blood pressure.')
     
     
+    
     chol = st.text_input('Enter Cholesterol Level')
+    # Validate cholesterol level input
+    if chol:
+        if not chol.isdigit():
+            st.error('Cholesterol level must be a valid number.')
+        else:
+            chol = int(chol)
+            if chol < 50 or chol > 500:
+                st.error('Cholesterol level must be between 50 and 500.')
+    else:
+        st.error('Please enter a cholesterol level.')
+    
+    
+    
+    
     fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl', ['Yes', 'No'])
     restecg = st.selectbox('Select Resting Electrocardiographic Results', ['Normal', 'Having ST-T wave abnormality', 'Showing probable or definite left ventricular hypertrophy'])
     thalach = st.text_input('Enter Maximum Heart Rate Achieved')
