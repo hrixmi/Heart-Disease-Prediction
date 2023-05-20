@@ -46,20 +46,19 @@ def main():
 
     
     #getting the input data from the user
-    def validate_age(age):
-    try:
-        age = int(age)
-        if age < 1 or age > 150:
-            raise ValueError
-        return age
-    except ValueError:
-        st.error("Please enter a valid age between 1 and 150.")
-        return None
+    age = st.text_input('Enter Age')
 
-# ...
+    # Validate age input
+    if age:
+        if not age.isdigit():
+            st.error('Age must be a valid number.')
+        else:
+            age = int(age)
+            if age < 0 or age > 150:
+                st.error('Age must be between 0 and 150.')
+    else:
+        st.error('Please enter an age.')
 
-age = st.text_input('Enter Age')
-age = validate_age(age)
 
 # ...
 
