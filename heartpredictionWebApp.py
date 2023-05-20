@@ -73,8 +73,7 @@ def main():
             trestbps = int(trestbps)
             if trestbps < 60 or trestbps > 300:
                 st.error('Resting blood pressure must be between 60 and 300 mmHg.')
-    else:
-        st.error('Please enter a resting blood pressure.')
+    
     
     
     
@@ -87,8 +86,7 @@ def main():
             chol = int(chol)
             if chol < 50 or chol > 500:
                 st.error('Cholesterol level must be between 50 and 500.')
-    else:
-        st.error('Please enter a cholesterol level.')
+    
     
     
     
@@ -106,8 +104,7 @@ def main():
             thalach = int(thalach)
             if thalach < 0 or thalach > 300:
                 st.error('Maximum heart rate achieved must be between 0 and 300.')
-    else:
-        st.error('Please enter a maximum heart rate achieved.')
+    
     
     
     
@@ -123,8 +120,7 @@ def main():
                 st.error('ST Depression must be between 0 and 10.')
         except ValueError:
             st.error('ST Depression must be a valid number.')
-    else:
-        st.error('Please enter an ST Depression value.')
+    
         
         
         
@@ -140,8 +136,7 @@ def main():
             ca = int(ca)
             if ca < 0 or ca > 4:
                 st.error('Number of major vessels must be between 0 and 4.')
-    else:
-        st.error('Please enter the number of major vessels.')
+    
     
     
     thal = st.selectbox('Thalassemia', ['Normal', 'Fixed defect', 'Reversable defect'])
