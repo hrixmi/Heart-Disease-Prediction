@@ -55,7 +55,7 @@ def main():
         else:
             age = int(age)
             if age < 18 or age > 100:
-                st.error('Age must be between 0 and 150.')
+                st.error('Age must be between 18 and 100.')
     else:
         st.error('Please enter an age.')
 
