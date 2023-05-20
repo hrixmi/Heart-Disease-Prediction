@@ -114,7 +114,22 @@ def main():
     
     
     exang = st.selectbox('Exercise Induced Angina', ['Yes', 'No'])
+    
+    
     oldpeak = st.text_input('Enter ST Depression')
+    # Validate ST depression input
+    if oldpeak:
+        try:
+            oldpeak = float(oldpeak)
+            if oldpeak < 0 or oldpeak > 10:
+                st.error('ST Depression must be between 0 and 10.')
+        except ValueError:
+            st.error('ST Depression must be a valid number.')
+    else:
+        st.error('Please enter an ST Depression value.')
+        
+        
+        
     slope = st.selectbox('Select the slope of the peak exercise ST segment', ['Upsloping', 'Flat', 'Downsloping'])
     ca = st.text_input('Enter the number of major vessels colored by fluoroscopy')
     thal = st.selectbox('Thalassemia', ['Normal', 'Fixed defect', 'Reversable defect'])
