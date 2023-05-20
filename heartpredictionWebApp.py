@@ -64,7 +64,22 @@ def main():
 
     sex = st.selectbox('Select Sex', ['Male', 'Female'])
     cp = st.selectbox('Select Chest Pain Type', ['Typical angina', 'Atypical angina', 'Non-anginal pain', 'Asymptomatic'])
+    
+    
     trestbps = st.text_input('Enter Resting Blood Pressure')
+
+    # Validate resting blood pressure input
+    if trestbps:
+        if not trestbps.isdigit():
+            st.error('Resting blood pressure must be a valid number.')
+        else:
+            trestbps = int(trestbps)
+            if trestbps < 0 or trestbps > 300:
+                st.error('Resting blood pressure must be between 0 and 300 mmHg.')
+    else:
+        st.error('Please enter a resting blood pressure.')
+    
+    
     chol = st.text_input('Enter Cholesterol Level')
     fbs = st.selectbox('Fasting Blood Sugar > 120 mg/dl', ['Yes', 'No'])
     restecg = st.selectbox('Select Resting Electrocardiographic Results', ['Normal', 'Having ST-T wave abnormality', 'Showing probable or definite left ventricular hypertrophy'])
