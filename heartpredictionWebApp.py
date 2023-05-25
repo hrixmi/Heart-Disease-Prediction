@@ -182,7 +182,9 @@ def main():
         
     st.markdown('<hr>', unsafe_allow_html=True)
     st.write('Version 1.3 | Last updated: May 2023 | Created by - Group 28')
-    st.write('[View source code]()')
+    #st.write('[View source code]()')
+    st.markdown('[View source code](https://github.com/hrixmi/Heart-Disease-Prediction.git)', unsafe_allow_html=True)
+
     
 if __name__ == '__main__':
     main()
