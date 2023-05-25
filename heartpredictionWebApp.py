@@ -53,8 +53,8 @@ def main():
             st.error('Age must be a valid number.')
         else:
             age = int(age)
-            if age < 18 or age > 100:
-                st.error('Age must be between 18 and 100.')
+            if age < 5 or age > 100:
+                st.error('Age must be between 5 and 100.')
 
 
     sex = st.selectbox('Select Sex', ['Male', 'Female'])
